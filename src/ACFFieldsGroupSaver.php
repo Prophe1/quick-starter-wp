@@ -28,15 +28,15 @@ final class ACFFieldsGroupSaver
     /**
      * @return array
      */
-    private function loadGroups(array $paths): array
+    public function loadGroups(array $paths): array
     {
-        $paths[] = self::getGroupPath();
+        $paths[] = $this->getGroupPath();
 
         return $paths;
     }
 
-    private static function getGroupPath(): string
+    public function getGroupPath(): string
     {
-        return QUICKS_DIR . '/field-groups';
+        return QUICKS_DIR . 'field-groups';
     }
 }
