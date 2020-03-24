@@ -37,6 +37,12 @@ final class ACFFieldsGroupSaver
 
     public function getGroupPath(): string
     {
-        return QUICKS_DIR . 'field-groups';
+        $base_path = QUICKS_UPL_DIR . '/field-groups';
+
+        if (! file_exists($base_path)) {
+            mkdir($base_path);
+        }
+
+        return $base_path;
     }
 }

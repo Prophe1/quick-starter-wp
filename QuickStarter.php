@@ -39,6 +39,7 @@ final class QuickStarter
     private function constants(): void
     {
         $this->define('QUICKS_DIR', plugin_dir_path(__FILE__));
+        $this->define('QUICKS_UPL_DIR', wp_get_upload_dir()['basedir']);
         $this->define('QUICKS_SLUG', 'QSS');
     }
 
