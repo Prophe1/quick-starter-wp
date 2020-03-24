@@ -9,7 +9,7 @@ final class ACFFieldsGroupSaver
      */
     public function __construct()
     {
-        add_action('init', [$this, 'filters']);
+        add_action('init', [$this, 'filters'], 4);
     }
 
     public function filters(): void
@@ -30,6 +30,8 @@ final class ACFFieldsGroupSaver
      */
     public function loadGroups(array $paths): array
     {
+        unset($paths[0]);
+
         $paths[] = $this->getGroupPath();
 
         return $paths;
